@@ -17,8 +17,18 @@ files.forEach(file => {
     plugins.push(
       new AddAssetHtmlWebpackPlugin({
         filepath: path.resolve(__dirname, "./vendors", file),
-        publicPath: "./vendors",
-        outputPath: "./vendors"
+        publicPath: "./vendors/js",
+        outputPath: "./vendors/js"
+      })
+    );
+  }
+  if (/.*\.dll.css/.test(file)) {
+    plugins.push(
+      new AddAssetHtmlWebpackPlugin({
+        filepath: path.resolve(__dirname, "./vendors", file),
+        publicPath: "./vendors/css",
+        outputPath: "./vendors/css",
+        typeOfAsset: "css"
       })
     );
   }
