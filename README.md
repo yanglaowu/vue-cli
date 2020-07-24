@@ -1,24 +1,33 @@
 # vue-cli
 
-## Project setup
+## 开始
+
 ```
-npm install
+yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 打包公共库
+
 ```
-npm run serve
+yarn run build:dll
 ```
 
-### Compiles and minifies for production
+### 开发环境
+
 ```
-npm run build
+yarn run serve:dev
+yarn run serve:prod
 ```
 
-### Lints and fixes files
+### 打包
+
+```
+yarn run build:dev
+yarn run build:prod
+```
+
+### lint
+
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
