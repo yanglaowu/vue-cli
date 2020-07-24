@@ -8,7 +8,6 @@ module.exports = {
   entry: {
     vue: ["vue", "vuex", "vue-router"], // 抽离vue 核心库
     vendor: ["element-ui", "axios", "lodash", "normalize.css"] // 抽离三方库
-    // common: [path.join(__dirname, "./src/styles/index.scss")] // 抽离全局样式
   },
   output: {
     path: path.resolve(__dirname, "./vendors"),
