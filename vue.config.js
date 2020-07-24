@@ -51,12 +51,13 @@ module.exports = {
       plugins.push(
         new BundleAnalyzerPlugin({
           analyzerMode: "static",
-          openAnalyzer: false
+          openAnalyzer: true
         })
       );
+      return smp.wrap({
+        plugins: [...plugins]
+      });
     }
-    return smp.wrap({
-      plugins: [...plugins]
-    });
+    return { plugins: [...plugins] };
   }
 };
