@@ -13,7 +13,9 @@ module.exports = {
     filename: "[name].dll.js",
     library: "[name]"
   },
-
+  performance: {
+    hints: false
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new webpack.DllPlugin({
