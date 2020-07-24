@@ -3,6 +3,7 @@
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
     <el-button type="primary">主要按钮</el-button>
+    <el-input v-model="input" placeholder="请输入内容"></el-input>
   </div>
 </template>
 
@@ -12,6 +13,14 @@ import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      input: ""
+    };
+  },
+  mounted() {
+    console.log(this);
+  },
   components: {
     HelloWorld
   }

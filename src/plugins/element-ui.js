@@ -1,6 +1,6 @@
-import { Button } from "element-ui";
+import { Button, Input } from "element-ui";
 
-const components = [Button];
+const components = [Button, Input];
 
 export default {
   install: Vue => {
