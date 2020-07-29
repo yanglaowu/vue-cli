@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   mode: "production",
   entry: {
-    vue: ["vue", "vuex", "vue-router"], // 抽离vue 核心库
+    core: ["vue", "vuex", "vue-router"], // 抽离vue 核心库
     vendor: ["element-ui", "axios", "lodash", "normalize.css"] // 抽离三方库
   },
   output: {
