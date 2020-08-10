@@ -3,11 +3,6 @@ const path = require("path");
 const webpack = require("webpack");
 
 const AddAssetHtmlWebpackPlugin = require("add-asset-html-webpack-plugin");
-// 打包速度分析
-const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
-// 打包体积分析
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
 
 const plugins = [];
 
@@ -43,22 +38,9 @@ files.forEach(file => {
   }
 });
 
-const smp = new SpeedMeasurePlugin();
-
 module.exports = {
   assetsDir: "assets",
-  configureWebpack: () => {
-    if (process.env.NODE_ENV === "production") {
-      plugins.push(
-        new BundleAnalyzerPlugin({
-          analyzerMode: "static",
-          openAnalyzer: false
-        })
-      );
-      return smp.wrap({
-        plugins: [...plugins]
-      });
-    }
-    return { plugins: [...plugins] };
-  }
+  configureWebpack: () => ({
+    plugins: [...plugins]
+  })
 };

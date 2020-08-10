@@ -26,6 +26,13 @@ yarn run build:dev
 yarn run build:prod
 ```
 
+### 发布
+
+```
+yarn run release:dev
+yarn run release:prod
+```
+
 ### lint
 
 ```

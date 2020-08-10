@@ -18,9 +18,6 @@ export default {
       input: ""
     };
   },
-  mounted() {
-    console.log(this);
-  },
   components: {
     HelloWorld
   }
