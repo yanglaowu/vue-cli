@@ -6,7 +6,8 @@ const AddAssetHtmlWebpackPlugin = require("add-asset-html-webpack-plugin");
 // 打包速度分析
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 // 打包提及分析
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 
 const plugins = [];
 
