@@ -42,5 +42,9 @@ module.exports = {
   assetsDir: "assets",
   configureWebpack: () => ({
     plugins: [...plugins]
-  })
+  }),
+  devServer: {
+    host: "0.0.0.0",
+    port: 8000
+  }
 };
