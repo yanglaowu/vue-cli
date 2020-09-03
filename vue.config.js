@@ -8,13 +8,13 @@ const plugins = [];
 
 const files = fs.readdirSync(path.resolve(__dirname, "./vendors"));
 
-files.forEach((file) => {
+files.forEach(file => {
   if (/.*\.dll.js/.test(file)) {
     plugins.push(
       new AddAssetHtmlWebpackPlugin({
         filepath: path.resolve(__dirname, "./vendors", file),
         publicPath: "/vendors/js",
-        outputPath: "/vendors/js",
+        outputPath: "/vendors/js"
       })
     );
   }
@@ -24,7 +24,7 @@ files.forEach((file) => {
         filepath: path.resolve(__dirname, "./vendors", file),
         publicPath: "/vendors/css",
         outputPath: "/vendors/css",
-        typeOfAsset: "css",
+        typeOfAsset: "css"
       })
     );
   }
@@ -32,7 +32,7 @@ files.forEach((file) => {
     plugins.push(
       new webpack.DllReferencePlugin({
         context: process.cwd(),
-        manifest: path.resolve(__dirname, "./vendors", file),
+        manifest: path.resolve(__dirname, "./vendors", file)
       })
     );
   }
@@ -41,10 +41,10 @@ files.forEach((file) => {
 module.exports = {
   assetsDir: "assets",
   configureWebpack: () => ({
-    plugins: [...plugins],
+    plugins: [...plugins]
   }),
   devServer: {
     host: "0.0.0.0",
-    port: 8000,
-  },
+    port: 8000
+  }
 };
