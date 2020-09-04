@@ -1,8 +1,6 @@
 <template>
   <div class="home">
     <a-button @click="handleChangeLocale" size="large" type="primary"> {{ $t("message") }} {{ count }} </a-button>
-    <a-date-picker />
-    <a-time-picker />
   </div>
 </template>
 

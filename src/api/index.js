@@ -1,3 +1,10 @@
+/*
+ * @Author: yangjie
+ * @Date: 2020-09-04 16:27:47
+ * @Last Modified by:   yangjie
+ * @Last Modified time: 2020-09-04 16:27:47
+ * 请求方式配置
+ */
 import request from "../plugins/request";
 
 export const post = (url, data = {}) => {

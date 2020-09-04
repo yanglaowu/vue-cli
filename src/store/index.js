@@ -28,5 +28,6 @@ export default new Vuex.Store({
   modules: {
     test
   },
+  strict: debug,
   plugins: debug ? [createLogger(), persistedState] : [persistedState]
 });
