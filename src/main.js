@@ -1,16 +1,22 @@
 import Vue from "vue";
-// element-ui 为按需引入 需在 `./plugins/element-ui` 添加
-import ElementUI from "./plugins/element-ui";
+// ant-design 组件库
+import Antd from "ant-design-vue";
+// 跟组件
 import App from "./App.vue";
-
+// 路由
 import router from "./router";
+// vuex
 import store from "./store";
+// 国际化
+import i18n from "./lang";
 
-Vue.use(ElementUI);
+Vue.use(Antd);
+
 Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount("#app");

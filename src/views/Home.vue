@@ -1,26 +1,29 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <el-button type="primary">主要按钮</el-button>
-    <el-input v-model="input" placeholder="请输入内容"></el-input>
+    <a-button @click="handleChangeLocale" size="large" type="primary"> {{ $t("message") }} {{ count }} </a-button>
+    <a-date-picker />
+    <a-time-picker />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
   name: "Home",
-  data() {
-    return {
-      input: ""
-    };
+  computed: {
+    count() {
+      return this.$store.state.test.count;
+    }
   },
-  components: {
-    // async components
-    HelloWorld: () => import("@/components/HelloWorld.vue")
+  methods: {
+    handleChangeLocale() {
+      const num = parseInt(Math.random() * 10);
+      this.$store.dispatch("setCount", num);
+      // if (this.$i18n.locale === "zh_CN") {
+      //   this.$i18n.locale = "en_US";
+      // } else {
+      //   this.$i18n.locale = "zh_CN";
+      // }
+    }
   }
 };
 </script>

@@ -1,7 +1,14 @@
+/*
+ * @Author: yangjie
+ * @Date: 2020-09-04 14:55:50
+ * @Last Modified by: yangjie
+ * @Last Modified time: 2020-09-04 14:56:35
+ * http 请求配置
+ */
 import axios from "axios";
 
 const request = axios.create({
-  baseURL: process.env.VUE_APP_API,
+  baseURL: process.env.VUE_APP_API, // 在模式内配置 .env.*
   timeout: 5000
 });
 // 添加请求拦截器

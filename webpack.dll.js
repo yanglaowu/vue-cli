@@ -7,7 +7,7 @@ module.exports = {
   mode: "production",
   entry: {
     core: ["vue", "vuex", "vue-router"], // 抽离vue 核心库
-    vendor: ["element-ui", "axios", "lodash", "normalize.css"] // 抽离三方库
+    vendor: ["axios", "lodash", "crypto-js", "normalize.css", "ant-design-vue", "ant-design-vue/dist/antd.css"] // 抽离三方库
   },
   output: {
     path: path.resolve(__dirname, "./vendors"),
