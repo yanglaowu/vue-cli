@@ -8,7 +8,7 @@ import router from "./router";
 // vuex
 import store from "./store";
 // 国际化
-import i18n from "./lang";
+import i18n from "./i18n";
 
 Vue.use(Antd);
 
