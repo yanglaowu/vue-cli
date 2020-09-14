@@ -1,7 +1,7 @@
 import Vue from "vue";
 // ant-design 组件库
 import Antd from "ant-design-vue";
-// 跟组件
+// 根组件
 import App from "./App.vue";
 // 路由
 import router from "./router";
