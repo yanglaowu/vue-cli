@@ -6,12 +6,13 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   mode: "production",
   entry: {
-    core: ["vue", "vuex", "vue-router"], // 抽离vue 核心库
-    vendor: ["axios", "lodash", "crypto-js", "normalize.css", "ant-design-vue", "ant-design-vue/dist/antd.css"] // 抽离三方库
+    core: ["vue", "vuex", "vue-router"],
+    ui: ["ant-design-vue", "ant-design-vue/dist/antd.css", "normalize.css"],
+    vendor: ["axios", "lodash", "crypto-js"] // 抽离vue 核心库
   },
   output: {
     path: path.resolve(__dirname, "./vendors"),
-    filename: "[name].dll.js",
+    filename: "[name].[hash:7].dll.js",
     library: "[name]"
   },
   performance: {
@@ -25,7 +26,7 @@ module.exports = {
       context: process.cwd()
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].dll.css" // 提取出来的css文件路径以及命名
+      filename: "[name].[hash:7].dll.css" // 提取出来的css文件路径以及命名
     })
   ],
   module: {

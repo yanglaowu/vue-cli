@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <a-button @click="handleChangeLocale" size="large" type="primary"> {{ $t("message") }} {{ count }} </a-button>
+    <a-button @click="handleChangeLocale" size="large" type="primary">
+      {{ $t("message") }} {{ count }}
+    </a-button>
   </div>
 </template>
 
