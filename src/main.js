@@ -13,6 +13,7 @@ import i18n from "./i18n";
 Vue.use(Antd);
 
 Vue.config.productionTip = false;
+Vue.config.devtools = process.env.NODE_ENV === "development";
 
 new Vue({
   router,

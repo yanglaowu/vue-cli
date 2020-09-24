@@ -6,7 +6,7 @@ import createPersistedState from "vuex-persistedstate";
 // 存储加密/解密
 import { encrypt, decrypt } from "../utils/crypto";
 // vuex 模块
-import test from "./modules/test";
+import modules from "./modules";
 // vuex getters
 import getters from "./getters";
 // 本地存储配置
@@ -25,9 +25,7 @@ const debug = process.env.NODE_ENV === "development";
 
 export default new Vuex.Store({
   getters,
-  modules: {
-    test
-  },
+  modules: { ...modules },
   strict: debug,
   plugins: debug ? [createLogger(), persistedState] : [persistedState]
 });
