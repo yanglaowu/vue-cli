@@ -1,14 +1,22 @@
 <template>
   <div class="home">
-    <a-button @click="handleChangeLocale" size="large" type="primary">
+    <Button @click="handleChangeLocale" size="large" type="primary">
       {{ $t("message") }}
-    </a-button>
+    </Button>
+    <Input />
+    <TimePicker></TimePicker>
   </div>
 </template>
 
 <script>
+import { Button, Input, TimePicker } from "ant-design-vue";
 export default {
   name: "Home",
+  components: {
+    Button,
+    Input,
+    TimePicker
+  },
   methods: {
     handleChangeLocale() {
       if (this.$i18n.locale === "zh_CN") {

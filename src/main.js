@@ -1,6 +1,6 @@
+import 'normalize.css'
+
 import Vue from "vue";
-// ant-design 组件库
-import Antd from "ant-design-vue";
 // 根组件
 import App from "./App.vue";
 // 路由
@@ -9,8 +9,6 @@ import router from "./router";
 import store from "./store";
 // 国际化
 import i18n from "./i18n";
-
-Vue.use(Antd);
 
 Vue.config.productionTip = false;
 Vue.config.devtools = process.env.NODE_ENV === "development";
