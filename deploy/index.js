@@ -4,7 +4,7 @@ const chalk = require("chalk");
 const log = console.log;
 const server = require("./config")[process.env.NODE_ENV];
 
-const spinner = ora(`正在发布到 ${server.host} ...`);
+const spinner = ora(`发布到 ${server.host} ...\n`);
 
 const sshClient = require("ssh2").Client;
 

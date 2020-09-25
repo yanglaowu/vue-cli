@@ -6,12 +6,6 @@
 yarn install
 ```
 
-### 打包公共库
-
-```
-yarn run build:dll
-```
-
 ### 开发环境
 
 ```

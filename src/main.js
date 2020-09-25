@@ -1,6 +1,6 @@
-import 'normalize.css'
-
 import Vue from "vue";
+// 组件
+import Components from "./components";
 // 根组件
 import App from "./App.vue";
 // 路由
@@ -9,6 +9,8 @@ import router from "./router";
 import store from "./store";
 // 国际化
 import i18n from "./i18n";
+
+Vue.use(Components);
 
 Vue.config.productionTip = false;
 Vue.config.devtools = process.env.NODE_ENV === "development";
