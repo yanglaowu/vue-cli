@@ -2,9 +2,10 @@ const fs = require("fs");
 const path = require("path");
 const webpack = require("webpack");
 
+const HardSourceWebpackPlugin = require("hard-source-webpack-plugin");
 const AddAssetHtmlWebpackPlugin = require("add-asset-html-webpack-plugin");
 
-const plugins = [];
+const plugins = [new HardSourceWebpackPlugin()];
 
 const files = fs.readdirSync(path.resolve(__dirname, "./vendors"));
 
