@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const webpack = require("webpack");
+const pkg = require("./package.json");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HardSourceWebpackPlugin = require("hard-source-webpack-plugin");
 const AddAssetHtmlWebpackPlugin = require("add-asset-html-webpack-plugin");
@@ -55,9 +56,19 @@ files.forEach(file => {
 
 module.exports = {
   assetsDir: "assets",
+  css: {
+    sourceMap: process.env.NODE_ENV === "development"
+  },
   configureWebpack: () => ({
     plugins: [...plugins]
   }),
+  chainWebpack: config => {
+    config.plugin("html").tap(args => {
+      // 设置 index.html的title
+      args[0].title = pkg.description;
+      return args;
+    });
+  },
   devServer: {
     host: "0.0.0.0",
     port: 8000
