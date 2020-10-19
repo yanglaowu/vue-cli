@@ -1,6 +1,7 @@
 import Vue from "vue";
 // ant-design 组件库
-import Antd from "ant-design-vue";
+import Antd from "element-ui";
+// import "element-ui/lib/theme-chalk/index.css";
 // 根组件
 import App from "./App.vue";
 // 路由

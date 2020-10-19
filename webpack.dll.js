@@ -7,7 +7,7 @@ module.exports = {
   mode: "production",
   entry: {
     core: ["vue", "vuex", "vue-router"],
-    ui: ["ant-design-vue", "ant-design-vue/dist/antd.css", "normalize.css"],
+    ui: ["element-ui", "element-ui/lib/theme-chalk/index.css", "normalize.css"],
     vendor: ["axios", "lodash", "crypto-js"] // 抽离vue 核心库
   },
   output: {
@@ -33,8 +33,24 @@ module.exports = {
     rules: [
       {
         //解析.css文件
-        test: /\.(sa|sc|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+        test: /\.(sa|sc|c|le)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+          "less-loader"
+        ]
+      },
+      {
+        test: /\.(ttf|eot|svg|woff|woff2)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            publicPath: '../fonts',
+            outputPath: './fonts',
+            name: "[name].[hash:7].dll.[ext]"
+          }
+        }
       }
     ]
   }

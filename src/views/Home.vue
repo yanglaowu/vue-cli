@@ -1,8 +1,9 @@
 <template>
   <div class="home">
-    <a-button @click="handleChangeLocale" size="large" type="primary">
+    <el-button type="primary" icon="el-icon-search">搜索</el-button>
+    <el-button @click="handleChangeLocale" size="large" type="primary">
       {{ $t("message") }}
-    </a-button>
+    </el-button>
   </div>
 </template>
 

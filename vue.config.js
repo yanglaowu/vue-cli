@@ -1,21 +1,22 @@
 const fs = require("fs");
 const path = require("path");
 const webpack = require("webpack");
-
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HardSourceWebpackPlugin = require("hard-source-webpack-plugin");
 const AddAssetHtmlWebpackPlugin = require("add-asset-html-webpack-plugin");
 
 const plugins = [new HardSourceWebpackPlugin()];
 
 const files = fs.readdirSync(path.resolve(__dirname, "./vendors"));
+console.log("files: ", files);
 
 files.forEach(file => {
   if (/.*\.dll.js/.test(file)) {
     plugins.push(
       new AddAssetHtmlWebpackPlugin({
         filepath: path.resolve(__dirname, "./vendors", file),
-        publicPath: "./vendors/js",
-        outputPath: "./vendors/js"
+        publicPath: "/vendors/js",
+        outputPath: "/vendors/js"
       })
     );
   }
@@ -23,9 +24,22 @@ files.forEach(file => {
     plugins.push(
       new AddAssetHtmlWebpackPlugin({
         filepath: path.resolve(__dirname, "./vendors", file),
-        publicPath: "./vendors/css",
-        outputPath: "./vendors/css",
+        publicPath: "/vendors/css",
+        outputPath: "/vendors/css",
         typeOfAsset: "css"
+      })
+    );
+  }
+  if (file === "fonts") {
+    plugins.push(
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            context: path.resolve(__dirname, "./vendors", file),
+            from: "*",
+            to: "./vendors/fonts"
+          }
+        ]
       })
     );
   }
